@@ -21,8 +21,8 @@ builds:
 #    goos: linux
 #    goarch: amd64
 #    image_templates:
-#      - "docker.io/slowrookie/redis-web-manager:{{ .Tag }}"
-#      - "docker.io/slowrookie/redis-web-manager:latest"
+#      - "docker.io/massinger/redis-web-manager:{{ .Tag }}"
+#      - "docker.io/massinger/redis-web-manager:latest"
 #    skip_push: false
 #    dockerfile: Dockerfile
 
@@ -36,7 +36,7 @@ dockers:
     build_flag_templates:
       - "--platform=linux/amd64"
   - image_templates:
-      - "docker.io/slowrookie/redis-web-manager:{{ .Tag }}-arm64v8"
+      - "docker.io/massinger/redis-web-manager:{{ .Tag }}-arm64v8"
     goos: linux
     use: buildx
     goarch: arm64
