@@ -52,7 +52,7 @@ func main() {
 	http.Handle("/", http.FileServer(http.FS(buildFiles)))
 
 	// server
-	http.Handle("/treesoft/ws", websocket.Handler(func(ws *websocket.Conn) {
+	http.Handle("/treesoft/wss", websocket.Handler(func(ws *websocket.Conn) {
 		ctx := ws.Request().Context()
 		ServerConn(ctx, ws, jsonrpc2.HandlerServer(func(ctx context.Context, reply jsonrpc2.Replier, req jsonrpc2.Request) error {
 			dec := json.NewDecoder(bytes.NewReader(req.Params()))
